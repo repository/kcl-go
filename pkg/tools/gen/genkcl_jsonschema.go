@@ -668,7 +668,7 @@ func convertSchemaFromJsonSchema(ctx *convertContext, s *jsonschema.Schema, name
 		// We use the reference schema id as the generated schema name
 		if reference != "" {
 			lastSlashIndex := strings.LastIndex(reference, "/")
-			result.schema.Name = convertPropertyName(strings.Replace(string(reference)[lastSlashIndex+1:], ".json", "", -1), CamelCase)
+			result.schema.Name = convertPropertyName(strings.Replace(string(reference)[lastSlashIndex+1:], ".json", "", -1), OriginalName)
 		} else {
 			var s strings.Builder
 			for _, p := range ctx.paths {
